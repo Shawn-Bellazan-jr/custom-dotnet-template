@@ -1,0 +1,4 @@
+{
+  "frameworks": [ "net8.0", "net9.0" ],
+  "projectTypes": [ "Web", "API", "Console" ]
+}

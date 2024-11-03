@@ -1,0 +1,4 @@
+{
+  "dbConnectionString": "Server=myServer;Database=CustomDb;User Id=admin;Password=admin;",
+  "appName": "MyCustomProject"
+}

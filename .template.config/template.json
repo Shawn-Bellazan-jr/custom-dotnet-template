@@ -2,9 +2,9 @@
 	"$schema": "http://json.schemastore.org/template",
 	"author": "Your Name",
 	"classifications": [ "Web", "Clean Architecture", "Multi-Project" ],
-	"identity": "CleanArchitecture.MultiProjectTemplate",
-	"name": "Clean Architecture Multi-Project Template",
-	"shortName": "clean-arch-template",
+	"identity": "DotnetCustomTemplate",
+	"name": ".NET Custom Template",
+	"shortName": "custom-template",
 	"tags": {
 		"language": "C#",
 		"type": "project"
@@ -12,24 +12,12 @@
 	"sourceName": "ProjectName",
 	"preferNameDirectory": true,
 	"primaryOutputs": [
-		{
-			"path": "ProjectName.Web/ProjectName.Web.csproj"
-		},
-		{
-			"path": "ProjectName.ApiService/ProjectName.ApiService.csproj"
-		},
-		{
-			"path": "ProjectName.ServiceDefaults/ProjectName.ServiceDefaults.csproj"
-		},
-		{
-			"path": "ProjectName.Core/ProjectName.Core.csproj"
-		},
-		{
-			"path": "ProjectName.AppHost/ProjectName.AppHost.csproj"
-		},
-		{
-			"path": "ProjectName.Tests/ProjectName.Tests.csproj"
-		}
+		{ "path": "ProjectName.Web/ProjectName.Web.csproj" },
+		{ "path": "ProjectName.ApiService/ProjectName.ApiService.csproj" },
+		{ "path": "ProjectName.ServiceDefaults/ProjectName.ServiceDefaults.csproj" },
+		{ "path": "ProjectName.Core/ProjectName.Core.csproj" },
+		{ "path": "ProjectName.AppHost/ProjectName.AppHost.csproj" },
+		{ "path": "ProjectName.Tests/ProjectName.Tests.csproj" }
 	],
 	"sources": [
 		{
@@ -50,6 +38,29 @@
 			"datatype": "bool",
 			"defaultValue": "false",
 			"description": "Exclude the Web project"
+		},
+		"dbConnectionString": {
+			"type": "parameter",
+			"datatype": "string",
+			"defaultValue": "Server=localhost;Database=MyAppDb;User Id=myuser;Password=mypassword;",
+			"description": "Database connection string"
+		},
+		"appName": {
+			"type": "parameter",
+			"datatype": "string",
+			"defaultValue": "My Custom App",
+			"description": "The name of the application"
 		}
-	}
+	},
+	"postActions": [
+		{
+			"actionId": "15f888e3-91f2-46d9-9fd6-57307450439e",
+			"description": "Restore NuGet packages",
+			"manualInstructions": [ { "text": "Run 'dotnet restore' to install dependencies." } ],
+			"continueOnError": true,
+			"args": {
+				"targetFiles": "ProjectName.sln"
+			}
+		}
+	]
 }
