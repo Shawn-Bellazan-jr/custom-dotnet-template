@@ -1,9 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+	  <!-- Assembly metadata -->
+	  <Company>__companyName__</Company>
+	  <Product>__appName__</Product>
+	  <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+	  <FileVersion>$(VersionPrefix)</FileVersion>
+	  <InformationalVersion>$(VersionPrefix)-ci</InformationalVersion>
+	  <Description>__description__</Description>
+	  <Authors>__author__</Authors>
+	  <RepositoryUrl>https://github.com/your-repo-url</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageTags>web;api;__appName__</PackageTags>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\__appName__.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

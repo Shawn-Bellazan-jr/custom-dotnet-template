@@ -1,4 +1,13 @@
 {
-  "frameworks": [ "net8.0", "net9.0" ],
-  "projectTypes": [ "Web", "API", "Console" ]
+  "frameworks": [ "net6.0", "net7.0" ],
+  "projectTypes": [ "Web", "API", "Console" ],
+  "defaultNamespace": "MyCompany.MyProject",
+  "customScripts": {
+    "preCreationScript": "scripts/pre-create.ps1",
+    "postCreationScript": "scripts/post-create.ps1"
+  },
+  "ciPipeline": {
+    "defaultPipeline": "github-actions",
+    "supportedPipelines": [ "github-actions", "azure-pipelines" ]
+  }
 }
